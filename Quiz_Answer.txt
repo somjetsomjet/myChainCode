@@ -1,0 +1,7 @@
+1. git init
+2. ต้อง เอา file ไว้ใน staging ก่อน,     git add "filename"
+3.git status
+4. git branch
+5. git checkout -b "branchname"
+6. git commit -m "comment"
+7. git --version
