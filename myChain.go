@@ -31,7 +31,7 @@ func (t *MyChainCode) Query(stub shim.ChaincodeStubInterface, function string, a
 
 	Avalbytes, err := stub.GetState(args[0])
 	
-	iferr != nil {
+	if err != nil {
 		return nil, err
 	}
 	
