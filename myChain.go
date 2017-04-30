@@ -40,7 +40,7 @@ func (t *MyChainCode) Invoke(stub shim.ChaincodeStubInterface, function string, 
 	fmt.Printf("Invoke called")
 	
 	if function == "init" {
-		return t.Init(stub, args)
+		return t.Init(stub, "init", args)
 	} else if function == "update" {
 		return t.Update(stub, args)
 	} 
@@ -50,7 +50,7 @@ func (t *MyChainCode) Invoke(stub shim.ChaincodeStubInterface, function string, 
 func (t *MyChainCode) Update(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	fmt.Printf("Update called")
 	
-	err = stub.PutState(args[0], []byte(args[1]))
+	err := stub.PutState(args[0], []byte(args[1]))
 	if err != nil {
 		return nil, err
 	}
