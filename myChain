@@ -57,3 +57,10 @@ func (t *MyChainCode) update(stub shim.ChaincodeStubInterface, args []string) ([
 	}
 	return nil, nil
 }
+
+func main() {
+    err := shim.Start(new(MyChainCode))
+    if err != nil {
+        fmt.Printf("Error starting MyChainCode chaincode: %s", err)
+    }
+}
