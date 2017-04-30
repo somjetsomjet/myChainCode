@@ -47,7 +47,7 @@ func (t *MyChainCode) Invoke(stub shim.ChaincodeStubInterface, function string, 
 	return nil, errors.New("Received unknown function invocation")
 }
 
-func (t *MyChainCode) update(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *MyChainCode) Update(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	fmt.Printf("Update called")
 	
 	err = stub.PutState(args[0], []byte(args[1]))
