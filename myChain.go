@@ -31,8 +31,10 @@ func (t *MyChainCode) Query(stub shim.ChaincodeStubInterface, function string, a
 
 	Avalbytes, err := stub.GetState(args[0])
 	
-	if(err != nil )
+	iferr != nil {
 		return nil, err
+	}
+	
 	jsonResp := "{\"Key\":\"" + args[0] + "\",\"Value\":\"" + string(Avalbytes) + "\"}"
 	fmt.Printf("Query Response:%s\n", jsonResp)
 	return Avalbytes, nil
